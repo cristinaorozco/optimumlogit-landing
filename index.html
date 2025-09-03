@@ -40,15 +40,16 @@
     .hero {
       min-height:100vh;
       display:flex;
-      align-items:flex-start;   /* alinear al inicio */
+      align-items:center;       /* mantiene todo centrado verticalmente */
       justify-content:center;
-      padding-top: 1cm;         /* espacio fijo de 1 cm */
-      padding-bottom: 40px;     /* mantén margen inferior */
+      padding:0 0 40px;         /* quitamos el padding-top */
     }
+
     .hero-inner {
       width:100%;
       max-width:1000px;
       text-align:center;
+      margin-top: 1cm;          /* desplazamos TODO hacia abajo 1 cm */
     }
     .sub {
       max-width: 820px;
