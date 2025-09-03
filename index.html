@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Optimum Logit</title>
+  <meta name="description" content="Optimum Logit helps logistics teams in Dubai quote smarter: route analytics, freight rate prediction, and warehouse services pricing with AI." />
+  <link rel="icon" href="favicon.png" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0b1a39;
+      --muted:#475569;
+      --brand:#3b82f6;       /* azul */
+      --brand-dark:#2563eb;  /* azul oscuro */
+      --card:#f8fafc;
+      --border:#e2e8f0;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:var(--brand-dark)}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+    /* Header / Nav */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:20}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:42px;width:auto}
+    .brand-name{font-weight:800;font-size:1.6rem;letter-spacing:-.2px}
+    .menu{display:flex;align-items:center;gap:22px}
+    .menu a{color:#0b1a39;font-weight:600}
+    .menu a.active{color:var(--brand-dark)}
+
+    /* Views */
+    .view{display:none}
+    .view.active{display:block}
+
+    /* HOME (pantalla completa) */
+    .hero{
+      min-height:100vh; /* ocupa toda la pantalla */
+      display:flex;align-items:center;justify-content:center;
+      padding:24px 0 40px;
+    }
+    .hero-inner{width:100%;max-width:1000px;text-align:center}
+    .logo-big {
+      max-width: 800px;    /* ancho máximo */
+      max-height: 250px;   /* altura aumentada para dar más presencia */
+      width: 100%;         /* escala hasta llenar el contenedor */
+      height: auto;        /* mantiene proporción natural */
+      display: block;
+      margin: 0 auto 18px;
+    }
+    .sub{
+      max-width:820px;margin:0 auto;color:var(--muted);font-size:1.08rem
+    }
+    .tag{
+      display:inline-block;margin:26px auto 10px;
+      font-weight:800;color:var(--brand-dark);letter-spacing:.02em
+    }
+    .cards{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+      margin:22px auto 0;max-width:1000px
+    }
+    @media (max-width:980px){.cards{grid-template-columns:1fr}}
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;
+      padding:18px;text-align:left
+    }
+    .card h3{margin:0 0 6px;font-size:1.06rem}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Generic sections (About/Services/Contact) */
+    section.section{padding:72px 0}
+    h2{margin:0 0 14px;font-size:1.9rem}
+    .lead{color:var(--muted)}
+    footer{padding:22px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.95rem;text-align:center}
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="Optimum Logit logo" />
+        <span class="brand-name">OptimumLogit</span>
+      </div>
+      <nav class="menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME (solo esta vista se muestra al cargar) -->
+  <main id="home" class="view active">
+    <div class="container hero">
+      <div class="hero-inner">
+        <!-- LOGO grande (se eliminó el título debajo) -->
+        <img class="logo-big" src="logo.png" alt="Optimum Logit logo" />
+
+        <p class="sub">
+          Optimum Logit helps logistics teams in Dubai quote smarter:
+          route analytics, freight rate prediction, and warehouse services pricing with AI.
+        </p>
+
+        <div class="tag">Why Optimum Logit?</div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Built for Dubai logistics</h3>
+            <p>Local lanes, congestion patterns, and SLAs tuned for Dubai operations.</p>
+          </article>
+          <article class="card">
+            <h3>Fast pilot</h3>
+            <p>Start with a focused lane set and expand.</p>
+          </article>
+          <article class="card">
+            <h3>User Interface</h3>
+            <p>Our fast UI se basa en modelos de prediccion de alta precision.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ABOUT (oculto por defecto; solo al hacer clic) -->
+  <section id="about" class="view section">
+    <div class="container">
+      <h2>About us</h2>
+      <p class="lead" style="white-space:pre-line">
+“Optimum Logit was founded with a clear mission: to transform the way logistics companies in Dubai and the GCC set their rates.
+
+With experience in global logistics operations, financial analytics, and AI development, we saw a recurring challenge: companies often lose profitability because of outdated, manual, or “gut-feeling” pricing.
+
+Our platform integrates freight lane analytics, warehouse service prediction, and contract simulations, enabling companies to quote confidently, win more bids, and protect margins”.
+
+Cristina Orozco.
+Founder.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES (oculto por defecto) -->
+  <section id="services" class="view section">
+    <div class="container">
+      <h2>Services</h2>
+
+      <h3 style="margin-top:12px">Smart Freight Rates</h3>
+      <p class="lead">
+        We deliver to logistics clients (carriers, 3PLs, forwarders and shippers) highly targeted solutions
+        focused on cost savings, quoting speed, and margin protection.
+        Our user interface predicts rates based on lane features (distance, tolls, time of day, etc.),
+        historicals and market signals.
+      </p>
+
+      <h3 style="margin-top:26px">Smart Warehouse Services Rates</h3>
+      <p class="lead">
+        Storage tiers, VAS, SLAs and capacity utilization to set optimal rates. We solve a very common
+        challenge for logistics companies in Dubai: how to set storage and value-added services rates optimally,
+        avoiding losses from underquoting and improving competitiveness.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT (oculto por defecto) -->
+  <section id="contact" class="view section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">
+        Let us know when is the best time to call you, and we will provide you with timely information on how we can improve your operations.
+      </p>
+      <p class="lead">
+        Email us: <a href="mailto:cristina@optimumlogit.com">cristina@optimumlogit.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Optimum Logit — Dubai · Bogotá · Remote
+  </footer>
+
+  <script>
+    // Año en footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Router sencillo por hash: muestra una sola vista a la vez
+    const views = document.querySelectorAll('.view');
+    const links = document.querySelectorAll('.menu a');
+
+    function show(hash){
+      const id = (hash || '#home').replace('#','');
+      views.forEach(v => v.classList.toggle('active', v.id === id));
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+id));
+      // scroll al top al cambiar de sección
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    window.addEventListener('hashchange', () => show(location.hash));
+    // al cargar
+    show(location.hash);
+  </script>
+</body>
+</html>
