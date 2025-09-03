@@ -37,19 +37,18 @@
     .view.active{display:block}
 
     /* HOME (pantalla completa) */
-    .hero{
-      min-height:100vh; /* ocupa toda la pantalla */
-      display:flex;align-items:center;justify-content:center;
-      padding:24px 0 40px;
+    .hero {
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;   /* alinear al inicio */
+      justify-content:center;
+      padding-top: 1cm;         /* espacio fijo de 1 cm */
+      padding-bottom: 40px;     /* mantén margen inferior */
     }
-    .hero-inner{width:100%;max-width:1000px;text-align:center}
-    .logo-big {
-      max-width: 800px;    /* ancho correcto */
-      max-height: 490px;   /* altura = proporción original + ~2cm */
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 18px;
+    .hero-inner {
+      width:100%;
+      max-width:1000px;
+      text-align:center;
     }
     .sub {
       max-width: 820px;
